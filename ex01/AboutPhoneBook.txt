@@ -1,0 +1,282 @@
+Perfect 👍
+ex01 deserves a deep explanation — this is the exercise where most 42 students either understand OOP or get stuck later.
+
+I’ll do exactly what you asked:
+
+✅ Step-by-step plan (what to do, in order)
+
+✅ All important edge cases the grader will test
+
+❌ No code
+
+Think of this like a mental checklist you follow while coding.
+
+CPP00 – ex01 (PhoneBook) — FULL GUIDED PLAN
+1️⃣ Before writing ANY code: understand the rules
+
+This exercise simulates a real terminal application.
+
+You have only 3 commands:
+
+ADD
+
+SEARCH
+
+EXIT
+
+Anything else:
+
+❌ must NOT crash
+
+❌ must NOT behave weirdly
+
+💡 Edge case #1
+User enters random text → program must ignore it and continue.
+
+2️⃣ Global architecture (VERY IMPORTANT)
+
+You must create 2 classes:
+
+📌 Contact
+
+Represents ONE person
+
+📌 PhoneBook
+
+Manages UP TO 8 contacts
+
+Think like this:
+
+PhoneBook is the boss
+Contact is just data
+
+3️⃣ Contact class — how to design it
+Step 3.1: Decide what must be PRIVATE
+
+These fields MUST be private:
+
+first name
+
+last name
+
+nickname
+
+phone number
+
+darkest secret
+
+💡 Why private?
+Because the subject wants encapsulation.
+Direct access = ❌ fail mindset.
+
+Step 3.2: How will data enter a Contact?
+
+A Contact:
+
+starts empty
+
+then gets filled by input
+
+So you need:
+
+a way to set all fields
+
+a way to read fields safely
+
+💡 Edge case #2
+Empty input (user presses ENTER)
+→ You must refuse it and ask again.
+
+4️⃣ PhoneBook class — design logic
+Step 4.1: Storage logic
+
+Rules:
+
+Max = 8 contacts
+
+If full → overwrite the oldest
+
+So PhoneBook must track:
+
+current index (0 → 7)
+
+total contacts stored
+
+💡 Edge case #3
+User adds more than 8 contacts
+→ Old contacts are replaced in order
+
+Step 4.2: ADD command logic
+
+When user types ADD:
+
+You must:
+
+Ask for all 5 fields
+
+Validate each input
+
+Store contact at correct index
+
+Update index correctly
+
+💡 Edge case #4
+User enters spaces only
+→ Consider it empty → reject
+
+5️⃣ SEARCH command — MOST TRICKY PART
+
+This is where many students fail.
+
+Step 5.1: Display summary table
+
+You must print:
+
+Index
+
+First name
+
+Last name
+
+Nickname
+
+Each column:
+
+Width = 10
+
+Right-aligned
+
+Truncated if >10 characters
+
+💡 Edge case #5
+Name longer than 10 characters
+→ Show first 9 + .
+
+Example:
+
+Christopher → Christoph.
+
+Step 5.2: No contacts yet
+
+💡 Edge case #6
+User types SEARCH before ADD
+
+Correct behavior:
+
+Print nothing OR message
+
+Must NOT crash
+
+Step 5.3: Index selection
+
+After showing table:
+
+Ask user for index
+
+Validate it
+
+Validation rules:
+
+Must be a number
+
+Must exist
+
+Must be inside range
+
+💡 Edge case #7
+User enters:
+
+letter
+
+negative number
+
+out-of-range number
+
+→ Must reject and return safely
+
+Step 5.4: Display full contact
+
+Once index is valid:
+
+Print all 5 fields
+
+No truncation
+
+6️⃣ Input handling — VERY IMPORTANT
+Rule:
+
+Never trust user input.
+
+Use:
+
+std::getline
+
+Avoid:
+
+Mixing cin >> and getline
+
+💡 Edge case #8
+User presses Ctrl+D (EOF)
+→ Program must exit cleanly.
+
+This is a classic 42 test.
+
+7️⃣ Program loop (main logic)
+
+Your program must:
+
+Start
+
+Wait for command
+
+Execute command
+
+Loop until EXIT
+
+💡 Edge case #9
+EXIT must:
+
+free memory automatically
+
+end program cleanly
+
+8️⃣ Object lifecycle (hidden check)
+
+Even if not visible:
+
+Constructors are called
+
+Destructors are called
+
+The grader expects:
+
+No dynamic memory
+
+No leaks
+
+Clean object creation
+
+9️⃣ Common mistakes that FAIL students ❌
+
+❌ Using global variables
+❌ Using struct instead of class
+❌ Public class attributes
+❌ Crashing on bad input
+❌ Hardcoding values
+❌ Not respecting formatting
+
+10️⃣ Mental checklist before submission ✅
+
+Ask yourself:
+
+Can my program survive any random input?
+
+Can I add 20 contacts without crash?
+
+Does SEARCH work when empty?
+
+Is my output exactly formatted?
+
+Are fields private?
+
+If yes → you’re ready.
