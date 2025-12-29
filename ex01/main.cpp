@@ -17,9 +17,7 @@ int main(int ac, char **av)
             if (input == "ADD")
                 phoneBook.AddContact();
             else if (input == "SEARCH")
-            {
-                // phoneBook.SearchContact();
-            }
+                phoneBook.SearchContact();
             else if (input =="EXIT")
                 break;
             else

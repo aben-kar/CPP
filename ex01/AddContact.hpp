@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   AddContact.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-kar <aben-kar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/28 00:01:42 by acben-ka          #+#    #+#             */
-/*   Updated: 2025/12/28 20:56:33 by aben-kar         ###   ########.fr       */
+/*   Created: 2025/12/28 20:36:54 by aben-kar          #+#    #+#             */
+/*   Updated: 2025/12/28 20:38:09 by aben-kar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef ADDCONTACT_HPP
+#define ADDCONTACT_HPP
 
-#include "Contact.hpp"
 #include <iostream>
-#include <string>
-#include <iomanip>
-#include <sstream>
 
-class PhoneBook {
-    private:
-        Contact contacts[8];
-        int contactCount;
-        int NextIndex;
-    public:
-        PhoneBook();
-        void AddContact();
-        void SearchContact() const;
-        ~PhoneBook();
-};
+bool isEmpty(const std::string &str);
+bool getNonEmptyInput(const std::string &prompt, std::string &result);
 
 #endif
