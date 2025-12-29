@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   UtilsPhoneBook.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/28 00:01:42 by acben-ka          #+#    #+#             */
-/*   Updated: 2025/12/29 23:32:45 by acben-ka         ###   ########.fr       */
+/*   Created: 2025/12/28 20:36:54 by aben-kar          #+#    #+#             */
+/*   Updated: 2025/12/30 00:00:33 by acben-ka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef UTILSPHONEBOOK_HPP
+#define UTILSPHONEBOOK_HPP
 
-#include "Contact.hpp"
 #include <iostream>
-#include <string>
-#include <iomanip>
-#include <sstream>
-// #include <cctype>
-#include <stdlib.h>
+#include <cstdlib>
 
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -29,17 +24,11 @@
 #define CYAN "\033[36m"
 #define RESET "\033[0m"
 
-
-class PhoneBook {
-    private:
-        Contact contacts[8];
-        int contactCount;
-        int NextIndex;
-    public:
-        PhoneBook();
-        void AddContact();
-        void SearchContact() const;
-        ~PhoneBook();
-};
+bool isEmpty(const std::string str);
+bool getNonEmptyInput(const std::string prompt, std::string &result);
+std::string IsValide(const std::string value);
+bool getContactFields(std::string &firstName, std::string &lastName, 
+                      std::string &nickName, std::string &phoneNumber, 
+                      std::string &darkestSecret);
 
 #endif

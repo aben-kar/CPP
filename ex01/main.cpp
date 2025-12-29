@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/29 18:19:56 by acben-ka          #+#    #+#             */
+/*   Updated: 2025/12/29 23:39:26 by acben-ka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
@@ -11,9 +23,9 @@ int main(int ac, char **av)
         while (1)
         {
             std::cout << "Enter command (ADD, SEARCH, or EXIT): ";
-            if (!std::getline(std::cin, input)) // EOF (Ctrl+D)
-                break;
 
+            if (!std::getline(std::cin, input))
+                break;
             if (input == "ADD")
                 phoneBook.AddContact();
             else if (input == "SEARCH")
@@ -21,10 +33,10 @@ int main(int ac, char **av)
             else if (input =="EXIT")
                 break;
             else
-                std::cout << "Error: Invalid argument. Please use ADD, SEARCH, or EXIT." << std::endl;
+                std::cout << RED "Error: Invalid argument. Please use ADD, SEARCH, or EXIT." << RESET << std::endl;
         }
     }
     else
-        std::cout << "Error: This program does not take any arguments." << std::endl;
+        std::cout << RED "Error: This program does not take any arguments." << RESET << std::endl;
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 22:22:25 by acben-ka          #+#    #+#             */
-/*   Updated: 2025/12/28 00:02:51 by acben-ka         ###   ########.fr       */
+/*   Updated: 2025/12/29 22:31:54 by acben-ka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Contact {
         std::string DarkestSecret;
     public:
         Contact();
-        void setFirstName(std::string fn); // st setter
-        std::string getFirstName() const; // gt getter
+        void setFirstName(std::string fn);
+        std::string getFirstName() const;
         void setLastName(std::string ln);
         std::string getLastName() const;
         void setNickName(std::string nn);
