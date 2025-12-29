@@ -6,7 +6,7 @@
 /*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 20:30:30 by aben-kar          #+#    #+#             */
-/*   Updated: 2025/12/30 00:00:25 by acben-ka         ###   ########.fr       */
+/*   Updated: 2025/12/30 00:49:49 by acben-ka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,45 @@ bool isEmpty(const std::string str)
     return true;
 }
 
+
+std::string trim(const std::string &str)
+{
+    size_t start = 0;
+    size_t end = str.length();
+
+    while (start < end && (str[start] == '\t'))
+        start++;
+
+    while (end > start && (str[end - 1] == '\t'))
+        end--;
+
+    return str.substr(start, end - start);
+}
+
+
 bool getNonEmptyInput(const std::string prompt, std::string &result)
 {
     std::string input;
-    
-    while (1)
+    std::string trimmed;
+
+    while (true)
     {
         std::cout << prompt;
         std::getline(std::cin, input);
-        if(std::cin.eof() == true)
+
+        if (std::cin.eof())
             exit(0);
-        if (input.empty() || isEmpty(input))
-            std::cout << RED "Field cannot be empty. Try again." << RESET << std::endl;
+
+        trimmed = trim(input);
+
+        if (isEmpty(trimmed))
+        {
+            std::cout << RED "Field cannot be empty." RESET << std::endl;
+        }
+        else if (trimmed != input)
+        {
+            std::cout << RED "No leading or trailing spaces/tabs allowed." RESET << std::endl;
+        }
         else
         {
             result = input;
@@ -58,6 +85,7 @@ bool getNonEmptyInput(const std::string prompt, std::string &result)
         }
     }
 }
+
 
 std::string IsValide(const std::string value)
 {
