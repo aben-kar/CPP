@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   UtilsPhoneBook.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aben-kar <aben-kar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 20:30:30 by aben-kar          #+#    #+#             */
-/*   Updated: 2025/12/30 00:49:49 by acben-ka         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:49:45 by aben-kar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "UtilsPhoneBook.hpp"
 
-bool getContactFields(std::string &firstName, std::string &lastName,
+bool getContact(std::string &firstName, std::string &lastName,
                       std::string &nickName, std::string &phoneNumber,
                       std::string &darkestSecret)
 {
@@ -64,20 +64,13 @@ bool getNonEmptyInput(const std::string prompt, std::string &result)
     {
         std::cout << prompt;
         std::getline(std::cin, input);
-
         if (std::cin.eof())
             exit(0);
-
         trimmed = trim(input);
-
         if (isEmpty(trimmed))
-        {
             std::cout << RED "Field cannot be empty." RESET << std::endl;
-        }
         else if (trimmed != input)
-        {
             std::cout << RED "No leading or trailing spaces/tabs allowed." RESET << std::endl;
-        }
         else
         {
             result = input;

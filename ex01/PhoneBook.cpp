@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aben-kar <aben-kar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 18:19:49 by acben-ka          #+#    #+#             */
-/*   Updated: 2025/12/30 00:13:52 by acben-ka         ###   ########.fr       */
+/*   Updated: 2025/12/30 04:35:01 by aben-kar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,23 @@ PhoneBook::~PhoneBook()
 }
 
 // Add a new contact
-void PhoneBook::AddContact()
+void PhoneBook::AddContact() // :: is call scope resolution operator
 {
     std::string firstName, lastName, nickName, phoneNumber, darkestSecret;
 
-    std::cout << GREEN "\n=== Adding New Contact ===" << RESET << std::endl;
-
-    if (!getContactFields(firstName, lastName, nickName, phoneNumber, darkestSecret))
+    std::cout << GREEN "\nAdding New Contact:" << RESET << std::endl;
+    
+    // Get contact fields
+    if (!getContact(firstName, lastName, nickName, phoneNumber, darkestSecret))
         return;
 
     // Store in the contact at nextIndex
+    
     contacts[NextIndex].setFirstName(firstName);
     contacts[NextIndex].setLastName(lastName);
     contacts[NextIndex].setNickName(nickName);
     contacts[NextIndex].setPhoneNumber(phoneNumber);
     contacts[NextIndex].setDarkestSecret(darkestSecret);
-    
     // Update circular index
     NextIndex = (NextIndex + 1) % 8;
 
@@ -45,7 +46,7 @@ void PhoneBook::AddContact()
     if (contactCount < 8)
         contactCount++;
 
-    std::cout << GREEN "=== Contact added successfully! ===" << RESET << std::endl;
+    std::cout << GREEN "Contact added successfully!\n" << RESET << std::endl;
 }
 
 void PhoneBook::SearchContact() const
@@ -56,7 +57,7 @@ void PhoneBook::SearchContact() const
         return;
     }
 
-    std::cout << GREEN "\n=== Contact List ===" << RESET << std::endl;
+    std::cout << GREEN "\nContact List:" << RESET << std::endl;
     std::cout << std::setw(10) << "Index" << "|"
               << std::setw(10) << "FirstName" << "|"
               << std::setw(10) << "LastName" << "|"
@@ -88,12 +89,12 @@ void PhoneBook::SearchContact() const
         }
 
         // display full contact info
-        std::cout << std::setw(10) << GREEN "Contact Details:" << RESET << std::endl;
+        std::cout << std::setw(10) << GREEN "\nContact Details:" << RESET << std::endl;
         std::cout << "First Name: " << contacts[index].getFirstName() << std::endl;
         std::cout << "Last Name: " << contacts[index].getLastName() << std::endl;
         std::cout << "Nickname: " << contacts[index].getNickName() << std::endl;
         std::cout << "Phone Number: " << contacts[index].getPhoneNumber() << std::endl;
         std::cout << "Darkest Secret: " << contacts[index].getDarkestSecret() << std::endl;
-        std::cout << GREEN "=== End of contact data ===" << RESET << std::endl;
+        std::cout << GREEN "End of contact data\n" << RESET << std::endl;
     }
 }

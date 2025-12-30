@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   UtilsPhoneBook.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aben-kar <aben-kar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 20:36:54 by aben-kar          #+#    #+#             */
-/*   Updated: 2025/12/30 00:00:33 by acben-ka         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:47:53 by aben-kar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 bool isEmpty(const std::string str);
 bool getNonEmptyInput(const std::string prompt, std::string &result);
 std::string IsValide(const std::string value);
-bool getContactFields(std::string &firstName, std::string &lastName, 
+bool getContact(std::string &firstName, std::string &lastName, 
                       std::string &nickName, std::string &phoneNumber, 
                       std::string &darkestSecret);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aben-kar <aben-kar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 22:22:25 by acben-ka          #+#    #+#             */
-/*   Updated: 2025/12/29 22:31:54 by acben-ka         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:45:19 by aben-kar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,17 @@ class Contact {
         std::string DarkestSecret;
     public:
         Contact();
-        void setFirstName(std::string fn);
-        std::string getFirstName() const;
-        void setLastName(std::string ln);
-        std::string getLastName() const;
-        void setNickName(std::string nn);
-        std::string getNickName() const;
-        void setPhoneNumber(std::string pn);
-        std::string getPhoneNumber() const;
+        // Setters
         void setDarkestSecret(std::string ds);
+        void setPhoneNumber(std::string pn);
+        void setFirstName(std::string fn);
+        void setLastName(std::string ln);
+        void setNickName(std::string nn);
+        // Getters
+        std::string getFirstName() const;
+        std::string getLastName() const;
+        std::string getNickName() const;
+        std::string getPhoneNumber() const;
         std::string getDarkestSecret() const;
         ~Contact();
 };

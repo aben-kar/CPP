@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aben-kar <aben-kar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 18:19:56 by acben-ka          #+#    #+#             */
-/*   Updated: 2025/12/29 23:39:26 by acben-ka         ###   ########.fr       */
+/*   Updated: 2025/12/30 03:35:36 by aben-kar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int ac, char **av)
         std::string input;;
         while (1)
         {
-            std::cout << "Enter command (ADD, SEARCH, or EXIT): ";
+            std::cout << CYAN "Enter command (ADD, SEARCH, or EXIT): " RESET;
 
             if (!std::getline(std::cin, input))
                 break;
