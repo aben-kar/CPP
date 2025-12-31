@@ -6,15 +6,19 @@
 /*   By: aben-kar <aben-kar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 22:20:09 by acben-ka          #+#    #+#             */
-/*   Updated: 2025/12/30 02:55:29 by aben-kar         ###   ########.fr       */
+/*   Updated: 2025/12/31 16:06:31 by aben-kar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact()
-    : FirstName(""), LastName(""), NickName(""), PhoneNumber(""), DarkestSecret("")
 {
+    FirstName = "";
+    LastName = "";
+    NickName = "";
+    PhoneNumber = "";
+    DarkestSecret = "";
 }
 
 Contact::~Contact()

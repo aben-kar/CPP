@@ -6,7 +6,7 @@
 /*   By: aben-kar <aben-kar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 00:01:42 by acben-ka          #+#    #+#             */
-/*   Updated: 2025/12/30 03:45:48 by aben-kar         ###   ########.fr       */
+/*   Updated: 2025/12/31 16:53:04 by aben-kar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ class PhoneBook {
         void AddContact();
         void SearchContact() const;
         ~PhoneBook();
-};
-
+    };
+    
 #endif
