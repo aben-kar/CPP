@@ -1,50 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   UtilsPhoneBook.cpp                                 :+:      :+:    :+:   */
+/*   UtilsAdd.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-kar <aben-kar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 20:30:30 by aben-kar          #+#    #+#             */
-/*   Updated: 2025/12/31 20:50:59 by aben-kar         ###   ########.fr       */
+/*   Updated: 2026/01/01 17:01:01 by acben-ka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "UtilsPhoneBook.hpp"
-
-void getContact(std::string &firstName, std::string &lastName,
-                      std::string &nickName, std::string &phoneNumber,
-                      std::string &darkestSecret)
-{
-    getNonEmptyInput("First name: ", firstName);
-    getNonEmptyInput("Last name: ", lastName);
-    getNonEmptyInput("Nickname: ", nickName);
-    getNonEmptyInput("Phone number: ", phoneNumber);
-    getNonEmptyInput("Darkest secret: ", darkestSecret);
-}
+#include "UtilsAdd.hpp"
 
 bool isEmpty(const std::string &str)
 {
     for (size_t i = 0; i < str.length(); i++)
     {
         if (str[i] != ' ' && str[i] != '\t')
-            return false;
+        return false;
     }
     return true;
 }
-
 
 std::string trim(std::string &str)
 {
     size_t start = 0;
     size_t end = str.length();
-
+    
     while (start < end && (str[start] == ' ' || str[start] == '\t'))
-        start++;
-
+    start++;
+    
     while (end > start && (str[end - 1] == ' ' || str[end - 1] == '\t'))
-        end--;
-
+    end--;
+    
     return str.substr(start, end - start);
 }
 
@@ -53,9 +41,9 @@ bool IsNumber(std::string &str)
     for (size_t i = 0; i < str.length(); i++)
     {
         if (str[i] == ' ' || str[i] == '\t')
-            continue;
-        else if (!isdigit(str[i]))
-            return false;
+        continue;
+        else if (!std::isdigit(str[i]))
+        return false;
     }
     return true;
 }
@@ -64,7 +52,7 @@ bool getNonEmptyInput(const std::string prompt, std::string &result)
 {
     std::string input;
     std::string trimmed;
-
+    
     while (true)
     {
         std::cout << prompt;
@@ -87,7 +75,7 @@ bool getNonEmptyInput(const std::string prompt, std::string &result)
         }
         trimmed = trim(input);
         if (isEmpty(trimmed))
-            std::cout << RED "Field cannot be empty." RESET << std::endl;
+        std::cout << RED "Field cannot be empty." RESET << std::endl;
         else
         {
             result = trimmed;
@@ -96,19 +84,13 @@ bool getNonEmptyInput(const std::string prompt, std::string &result)
     }
 }
 
-
-std::string IsValide(const std::string value)
+void getContact(std::string &firstName, std::string &lastName,
+                      std::string &nickName, std::string &phoneNumber,
+                      std::string &darkestSecret)
 {
-    if (value.length() <= 10)
-        return value;
-    else
-        return value.substr(0, 9) + ".";
-}
-
-void PrintListContacts()
-{
-    std::cout << std::setw(10) << "Index" << "|"
-              << std::setw(10) << "FirstName" << "|"
-              << std::setw(10) << "LastName" << "|"
-              << std::setw(10) << "NickName" << std::endl;
+    getNonEmptyInput("First name: ", firstName);
+    getNonEmptyInput("Last name: ", lastName);
+    getNonEmptyInput("Nickname: ", nickName);
+    getNonEmptyInput("Phone number: ", phoneNumber);
+    getNonEmptyInput("Darkest secret: ", darkestSecret);
 }

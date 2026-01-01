@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   UtilsAdd.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/28 00:01:42 by acben-ka          #+#    #+#             */
-/*   Updated: 2026/01/01 17:00:22 by acben-ka         ###   ########.fr       */
+/*   Created: 2025/12/28 20:36:54 by aben-kar          #+#    #+#             */
+/*   Updated: 2026/01/01 17:00:45 by acben-ka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef UTILSADD_HPP
+#define UTILSADD_HPP
 
-#include "Contact.hpp"
 #include <iostream>
-#include <string>
+#include <cstdlib>
 #include <iomanip>
-#include <sstream>
-#include <stdlib.h>
 
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -28,17 +25,10 @@
 #define CYAN "\033[36m"
 #define RESET "\033[0m"
 
+bool isEmpty(const std::string &str);
+bool getNonEmptyInput(const std::string prompt, std::string &result);
+void getContact(std::string &firstName, std::string &lastName, 
+                      std::string &nickName, std::string &phoneNumber, 
+                      std::string &darkestSecret);
 
-class PhoneBook {
-    private:
-        Contact contacts[8];
-        int contactCount;
-        int NextIndex;
-    public:
-        PhoneBook();
-        void AddContact();
-        void SearchContact() const;
-        ~PhoneBook();
-    };
-    
 #endif
