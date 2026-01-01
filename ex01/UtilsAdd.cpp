@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   UtilsAdd.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acben-ka <acben-ka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aben-kar <aben-kar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 20:30:30 by aben-kar          #+#    #+#             */
-/*   Updated: 2026/01/01 17:01:01 by acben-ka         ###   ########.fr       */
+/*   Updated: 2026/01/01 17:40:34 by aben-kar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ bool IsNumber(std::string &str)
     for (size_t i = 0; i < str.length(); i++)
     {
         if (str[i] == ' ' || str[i] == '\t')
-        continue;
+            continue;
         else if (!std::isdigit(str[i]))
-        return false;
+            return false;
     }
     return true;
 }
@@ -66,6 +66,11 @@ bool getNonEmptyInput(const std::string prompt, std::string &result)
                 std::cout << RED "Invalid phone number." RESET << std::endl;
                 continue;
             }
+            else if (isEmpty(input))
+            {
+                std::cout << RED "Field cannot be empty." RESET << std::endl;
+                continue;
+            }
             else
             {
                 trimmed = trim(input);
@@ -75,7 +80,7 @@ bool getNonEmptyInput(const std::string prompt, std::string &result)
         }
         trimmed = trim(input);
         if (isEmpty(trimmed))
-        std::cout << RED "Field cannot be empty." RESET << std::endl;
+            std::cout << RED "Field cannot be empty." RESET << std::endl;
         else
         {
             result = trimmed;
