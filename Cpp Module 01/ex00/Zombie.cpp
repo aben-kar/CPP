@@ -1,20 +1,16 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie() : name("Unnamed Zombie")
+Zombie::Zombie(std::string name)
 {
-    // Constructor body (if needed)
+    this->name = name;
 }
 
-Zombie::Zombie(std::string name) : name(name)
-{
-    // Constructor body (if needed)
-}
 Zombie::~Zombie()
 {
-    std::cout << this->name << " is destroyed." << std::endl;
+    std::cout << this->name << RED " is Destroyed." RESET << std::endl;
 }
 
 void Zombie::announce( void )
 {
-    std::cout << this->name << ": Braiiiiiiinnnssss..." << std::endl;
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
