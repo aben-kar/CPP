@@ -2,17 +2,17 @@
 
 Zombie::Zombie()
 {
-    std::cout << GREEN << "Zombie created." << RESET << std::endl;
+    std::cout << "Zombie created." << std::endl;
 }
 
 Zombie::~Zombie()
 {
-    std::cout << RED << "Zombie " << this->name << " destroyed." << RESET << std::endl;
+    std::cout << "Zombie " << this->name << " destroyed." << std::endl;
 }
 
 void Zombie::announce(void)
 {
-    std::cout << CYAN << this->name << ": BraiiiiiiinnnzzzZ..." << RESET << std::endl;
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void Zombie::setName(std::string name)

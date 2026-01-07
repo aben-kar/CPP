@@ -1,5 +1,13 @@
 #include "Harl.hpp"
 
+Harl::Harl()
+{
+}
+
+Harl::~Harl()
+{
+}
+
 void Harl::debug(void)
 {
     std::cout << "[DEBUG]" << std::endl;

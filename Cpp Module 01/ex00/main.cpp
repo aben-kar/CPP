@@ -2,10 +2,10 @@
 
 int main()
 {
-    std::cout << BLUE "Zombie HeapZombie created!" RESET << std::endl;
+    std::cout << "Zombie HeapZombie created!" << std::endl;
     Zombie* heapZombie = newZombie("HeapZombie");
     heapZombie->announce();
-    std::cout << CYAN "Zombie StackZombie created!" RESET << std::endl;
+    std::cout << "Zombie StackZombie created!" << std::endl;
     randomChump("StackZombie");
     delete heapZombie;
     return 0;
