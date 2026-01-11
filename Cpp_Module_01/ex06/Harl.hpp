@@ -16,5 +16,7 @@ class Harl
         void complain(std::string level);
         ~Harl();
 };
+
 int levelIndex(std::string arg);
+
 #endif

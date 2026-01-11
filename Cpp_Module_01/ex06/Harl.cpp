@@ -36,15 +36,22 @@ void Harl::complain(std::string level)
 {
     void (Harl::*functions[]) (void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-    std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    int _level = levelIndex(level);
 
-    for (int i = 0; i < 4; i++)
+    switch (_level)
     {
-        if (level == levels[i])
-        {
-            (this->*functions[i])();
-                return;
-        }
+        case 0:
+            (this->*functions[0])();
+        case 1:
+            (this->*functions[1])();
+        case 2:
+            (this->*functions[2])();
+        case 3:
+            (this->*functions[3])();
+            break;
+        default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+            break;
     }
 }
 

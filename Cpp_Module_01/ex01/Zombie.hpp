@@ -3,12 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 class Zombie
 {
     private:
         std::string name;
-        // int N;
     public:
         Zombie();
         ~Zombie();
