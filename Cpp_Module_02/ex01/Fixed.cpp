@@ -50,16 +50,18 @@ int Fixed::getRawBits() const
     return this->Value;
 }
 
-int Fixed::toInt(void) const{
+int Fixed::toInt(void) const {
+    std::cout << "TO INNNNNNNNT" << std::endl;
     return (this->Value >> this->Bits);
 }
 
 float Fixed::toFloat(void) const {
+    std::cout << "TO FLOATTTTTTTTT" << std::endl;
     return ((float)this->Value / (1 << this->Bits));
 }
 
 std::ostream &operator<<(std::ostream &o, Fixed const &i) {
-    // We want to print the float representation
+    std::cout << "alloo" << std::endl;
     o << i.toFloat();
     return o;
 }
