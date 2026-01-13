@@ -105,7 +105,7 @@ Fixed Fixed::operator/(const Fixed &rhs) const
     return Fixed(this->toFloat() / rhs.toFloat());
 }
 
-Fixed &Fixed::operator++(void)
+Fixed &Fixed::operator++(void)// ++a
 {
     this->Value++;
     return *this;

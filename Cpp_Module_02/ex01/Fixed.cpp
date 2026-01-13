@@ -46,22 +46,18 @@ void Fixed::setRawBits(int value)
 
 int Fixed::getRawBits() const
 {
-    std::cout << "getRawBits member function called" << std::endl;
     return this->Value;
 }
 
 int Fixed::toInt(void) const {
-    std::cout << "TO INNNNNNNNT" << std::endl;
     return (this->Value >> this->Bits);
 }
 
 float Fixed::toFloat(void) const {
-    std::cout << "TO FLOATTTTTTTTT" << std::endl;
     return ((float)this->Value / (1 << this->Bits));
 }
 
 std::ostream &operator<<(std::ostream &o, Fixed const &i) {
-    std::cout << "alloo" << std::endl;
     o << i.toFloat();
     return o;
 }
