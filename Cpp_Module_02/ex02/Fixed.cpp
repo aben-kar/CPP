@@ -2,36 +2,29 @@
 
 Fixed::Fixed() : Value(0)
 {
-    std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int n)
 {
-    std::cout << "Int constructor called" << std::endl;
     this->Value = n << this->Bits;
 }
 
 Fixed::Fixed(const float f)
 {
-    std::cout << "Float constructor called" << std::endl;
     this->Value = roundf(f * (1 << this->Bits));
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &other)
 {
-    std::cout << "Copy constructor called" << std::endl;
     *this = other;
 }
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
-
     if (this != &other)
     {
         this->Value = other.getRawBits();
@@ -46,8 +39,17 @@ void Fixed::setRawBits(int value)
 
 int Fixed::getRawBits() const
 {
-    std::cout << "getRawBits member function called" << std::endl;
     return this->Value;
+}
+
+int Fixed::toInt(void) const
+{
+    return (this->Value >> this->Bits);
+}
+
+float Fixed::toFloat(void) const
+{
+    return ((float)this->Value / (1 << this->Bits));
 }
 
 bool Fixed::operator>(const Fixed &rhs) const
@@ -105,7 +107,7 @@ Fixed Fixed::operator/(const Fixed &rhs) const
     return Fixed(this->toFloat() / rhs.toFloat());
 }
 
-Fixed &Fixed::operator++(void)// ++a
+Fixed &Fixed::operator++(void)
 {
     this->Value++;
     return *this;
@@ -129,21 +131,24 @@ Fixed Fixed::operator--(int) {
     return temp;
 }
 
-int Fixed::toInt(void) const
-{
-    std::cout << "TO INNNNNNNNT" << std::endl;
-    return (this->Value >> this->Bits);
+Fixed &Fixed::min(Fixed &a, Fixed &b) {
+    return (a < b) ? a : b;
 }
 
-float Fixed::toFloat(void) const
-{
-    std::cout << "TO FLOATTTTTTTTT" << std::endl;
-    return ((float)this->Value / (1 << this->Bits));
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b) {
+    return (a < b) ? a : b;
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b) {
+    return (a > b) ? a : b;
+}
+
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
+    return (a > b) ? a : b;
 }
 
 std::ostream &operator<<(std::ostream &o, Fixed const &i)
 {
-    std::cout << "alloo" << std::endl;
     o << i.toFloat();
     return o;
 }

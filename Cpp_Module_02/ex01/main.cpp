@@ -1,5 +1,4 @@
 #include "Fixed.hpp"
-#include <stdio.h>
 int main(void)
 {
     Fixed a;
