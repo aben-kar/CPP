@@ -2,18 +2,17 @@
 
 ScavTrap::ScavTrap()
 {
-    Name = "Default";
-    HitPoints = 100;
-    EnergyPoints = 50;
-    AttackDamage = 20;
-    std::cout << "Default Constructor" << std::endl;
+    this->HitPoints = 100;
+    this->EnergyPoints = 50;
+    this->AttackDamage = 20;
+    std::cout << "ScavTrap " << this->Name << " Default Constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
 {
-    HitPoints = 100;
-    EnergyPoints = 50;
-    AttackDamage = 20;
+    this->HitPoints = 100;
+    this->EnergyPoints = 50;
+    this->AttackDamage = 20;
     std::cout << "ScavTrap " << this->Name << " constructed." << std::endl;
 }
 
@@ -28,7 +27,13 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
-    ClapTrap::operator=(other);
+    if (this != &other)
+    {
+        this->Name = other.Name;
+        this->HitPoints = other.HitPoints;
+        this->EnergyPoints = other.EnergyPoints;
+        this->AttackDamage = other.AttackDamage;
+    }
     return *this;
 }
 
@@ -37,7 +42,7 @@ void ScavTrap::attack(const std::string& target)
     if (this->HitPoints > 0 && this->EnergyPoints > 0)
     {
         this->EnergyPoints--;
-        std::cout << "ScavTrap " << this->Name << " ferociously attacks " << target 
+        std::cout << "ScavTrap " << this->Name << " attacks " << target 
                   << ", causing " << this->AttackDamage << " points of damage!" << std::endl;
     }
     else
@@ -46,5 +51,5 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap " << this->Name << " is now in Gate keeper mode." << std::endl;
+    std::cout << "ScavTrap " << this->Name << " indicating that ScavTrap is now in Gatekeeper mode." << std::endl;
 }

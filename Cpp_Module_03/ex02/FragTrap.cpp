@@ -6,7 +6,7 @@ FragTrap::FragTrap()
     HitPoints = 100;
     EnergyPoints = 100;
     AttackDamage = 30;
-    std::cout << Name << "Default Constructor" << std::endl;
+    std::cout << "FragTrap" << this->Name << "Default Constructor" << std::endl;
 }
 
 
@@ -25,17 +25,21 @@ FragTrap::~FragTrap()
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 {
-
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &other)
 {
-    ClapTrap::operator=(other);
+    if (this != &other)
+    {
+        this->Name = other.Name;
+        this->HitPoints = other.HitPoints;
+        this->EnergyPoints = other.EnergyPoints;
+        this->AttackDamage = other.AttackDamage;
+    }
     return *this;
 }
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap class destructor called!" << std::endl;
-
+    std::cout << "FragTrap " << this->Name << " positive high-fives request on the standard output." << std::endl;
 }

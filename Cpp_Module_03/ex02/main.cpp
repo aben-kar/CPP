@@ -3,7 +3,7 @@
 
 
 int	main() {
-	ScavTrap	talin("Talin");
+	ClapTrap	talin("Talin");
 	ScavTrap	mogrus("Mogrus");
 	FragTrap	jagar("Jagar");
 

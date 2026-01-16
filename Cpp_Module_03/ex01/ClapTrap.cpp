@@ -3,7 +3,7 @@
 ClapTrap::ClapTrap() :
     Name("Default"), HitPoints(10), EnergyPoints(10), AttackDamage(0)
 {
-    std::cout << "Default Constructor" << std::endl;
+    std::cout << "ClapTrap " << this->Name << " Default Constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string _name) :
@@ -49,7 +49,7 @@ void ClapTrap::attack(const std::string&target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
     if (this->HitPoints == 0)
-        return;
+        return ;
 
     if (amount >= this->HitPoints)
         this->HitPoints = 0;
@@ -72,4 +72,3 @@ void ClapTrap::beRepaired(unsigned int amount)
     else
         return;
 }
-

@@ -2,10 +2,10 @@
 
 ScavTrap::ScavTrap()
 {
-    Name = "Default";
-    HitPoints = 100;
-    EnergyPoints = 50;
-    AttackDamage = 20;
+    this->HitPoints = 100;
+    this->EnergyPoints = 50;
+    this->AttackDamage = 20;
+    std::cout << "ScavTrap " << this->Name << " Default Constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
@@ -27,7 +27,13 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
-    ClapTrap::operator=(other);
+    if (this != &other)
+    {
+        this->Name = other.Name;
+        this->HitPoints = other.HitPoints;
+        this->EnergyPoints = other.EnergyPoints;
+        this->AttackDamage = other.AttackDamage;
+    }
     return *this;
 }
 
