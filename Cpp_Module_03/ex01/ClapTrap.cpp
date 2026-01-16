@@ -19,13 +19,11 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    std::cout << "Copy constructor called" << std::endl;
     *this = other;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
     {
         this->Name = other.Name;
