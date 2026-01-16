@@ -6,11 +6,10 @@ int main()
 
     trappy.attack("Bandit");
     trappy.takeDamage(5);
+    trappy.beRepaired(10);
+    trappy.takeDamage(5);
     trappy.beRepaired(3);
-    
-    // Force energy depletion
-    for (int i = 0; i < 10; i++)
-        trappy.attack("an annoying fly");
-
+    trappy.takeDamage(13);
+    trappy.beRepaired(3);
     return 0;
 }
