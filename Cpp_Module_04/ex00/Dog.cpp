@@ -2,7 +2,7 @@
 
 Dog::Dog()
 {
-    this->type = "Type";
+    this->type = "Dog";
     std::cout << "Dog constructed!" << std::endl;
 }
 

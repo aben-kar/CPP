@@ -13,12 +13,12 @@ int main()
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    // std::cout << "meta type " << meta->getType() << " " << std::endl;
-    // std::cout << "j type: " << j->getType() << " " << std::endl;
-    // std::cout << "i type: " << i->getType() << " " << std::endl;
+    std::cout << "meta type " << meta->getType() << " " << std::endl;
+    std::cout << "j type: " << j->getType() << " " << std::endl;
+    std::cout << "i type: " << i->getType() << " " << std::endl;
 
-    i->makeSound(); // will output the cat sound! (Meow!)
     j->makeSound(); // will output the dog sound! (Woof!)
+    i->makeSound(); // will output the cat sound! (Meow!)
     meta->makeSound(); // will output the generic animal sound
 
     // Dima delete what you allocated with 'new'
