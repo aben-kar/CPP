@@ -17,7 +17,7 @@ Cat::Cat(const Cat &other) : Animal(other)
 {
     std::cout << "Cat copy constructor called" << std::endl;
     this->_brain = NULL;
-    if (other._brain)
+    if (other._brain) // avoid copying NULL
         this->_brain = new Brain(*other._brain);
 }
 
@@ -27,7 +27,7 @@ Cat &Cat::operator=(const Cat &other)
     if (this != &other)
         this->type = other.type;
 
-    if (this->_brain)
+    if (this->_brain) // If current object already has a Brain → delete it first!
     {
         delete this->_brain;
         this->_brain = NULL;

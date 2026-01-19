@@ -8,7 +8,6 @@ int main()
 {
 	std::cout << "=== Simple Test: Understanding Polymorphism & Deep Copy ===\n\n";
 	
-	// Test 1: Basic polymorphism
 	std::cout << "--- Test 1: Creating Animals ---\n";
 	const Animal* dog = new Dog();
 	const Animal* cat = new Cat();
@@ -19,7 +18,7 @@ int main()
 	std::cout << "\nType: " << cat->getType() << std::endl;
 	cat->makeSound();
 	
-	// Test 2: Deep copy with Brain
+	// -----------------Test 2: Deep copy with Brain---------------
 	std::cout << "\n\n--- Test 2: Testing Deep Copy ---\n";
 	Dog* originalDog = new Dog();
 	std::cout << "Created original dog\n";
@@ -27,7 +26,7 @@ int main()
 	Dog* copiedDog = new Dog(*originalDog);  // Copy constructor
 	std::cout << "Created copied dog (should have its own brain)\n";
 	
-	// Test 3: Array of animals
+	// ---------------------Test 3: Array of animals----------------------
 	std::cout << "\n\n--- Test 3: Array of Animals ---\n";
 	Animal* animals[4];
 	
