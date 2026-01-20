@@ -25,16 +25,15 @@ Cat &Cat::operator=(const Cat &other)
 {
     std::cout << "Cat assignment operator called" << std::endl;
     if (this != &other)
-        this->type = other.type;
-
-    if (this->_brain) // If current object already has a Brain → delete it first!
     {
-        delete this->_brain;
-        this->_brain = NULL;
-    }
-
-    if (other._brain)
+        if (this->_brain)
+        {
+            delete this->_brain;
+            this->_brain = NULL;
+        }
         this->_brain = new Brain(*other._brain);
+        this->type = other.type;
+    }
     return *this;
 }
 

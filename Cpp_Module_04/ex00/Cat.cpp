@@ -27,3 +27,6 @@ void Cat::makeSound() const
 {
     std::cout << "Meow! Meow!" << std::endl;
 }
+
+// base => attack()
+// child => attack() 

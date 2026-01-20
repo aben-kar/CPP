@@ -9,7 +9,7 @@ Dog::Dog()
 
 Dog::~Dog()
 {
-    delete this->brain;
+    // delete this->brain;
     std::cout << "Dog destructed!" << std::endl;
 }
 
@@ -25,16 +25,15 @@ Dog &Dog::operator=(const Dog &other)
 {
     std::cout << "Dog assignment operator called" << std::endl;
     if (this != &other)
-        this->type = other.type;
-
-    if (this->brain)
     {
-        delete this->brain;
-        this->brain = NULL;
-    }
-
-    if (other.brain)
+        if (this->brain)
+        {
+            delete this->brain;
+            this->brain = NULL;
+        }
         this->brain = new Brain(*other.brain);
+        this->type = other.type;
+    }
     return *this;
 }
 
